@@ -12,14 +12,20 @@ const Slider = () => {
   : [];
 
   const totalSlides = byDateDesc.length;
-  const nextCard = () => {
-    setTimeout(
-      () => setIndex((prevIndex) => (prevIndex < totalSlides - 1 ? prevIndex + 1 : 0)),
-      5000);
-  };
+  
   useEffect(() => {
-    nextCard();
-  });
+    const intervalId = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex < totalSlides - 1 ? prevIndex + 1 : 0));
+    }, 5000)
+
+    return () => clearInterval(intervalId); 
+  }, [totalSlides]);
+
+  const handleOnChange = (event) => {
+    const newIndex = parseInt(event.target.value, 10);
+    setIndex(newIndex);
+  };
+
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
@@ -42,6 +48,8 @@ const Slider = () => {
                   type="radio"
                   name="radio-button"
                   checked={index === radioIdx}
+                  onChange={handleOnChange}
+                  value={radioIdx}
                 />
               ))}
             </div>
@@ -50,6 +58,6 @@ const Slider = () => {
       ))}
     </div>
   );
-};
+}
 
 export default Slider;
