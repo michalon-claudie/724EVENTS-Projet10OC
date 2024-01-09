@@ -27,7 +27,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder }) => {
     case FIELD_TYPES.EMAIL:
       component = (
         <input
-          type="Email"
+          type="email"
           name={name}
           placeholder={placeholder}
           data-testid="field-testid"
