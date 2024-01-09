@@ -24,7 +24,7 @@ const Form = ({ onSuccess, onError }) => {
           setSending(false);
           setButtonText("Envoyer");
           onSuccess(true);
-        }, 1000);
+        }, 900);
       } catch (err) {
         setSending(false);
         onError(err);
