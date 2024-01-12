@@ -7,8 +7,8 @@ import Button, { BUTTON_TYPES } from "../../components/Button";
 const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 800); })
 
 const Form = ({ onSuccess, onError }) => {
-  const [sending, setSending] = useState(false);
   const [buttonText, setButtonText] = useState("Envoyer");
+  const [sending, setSending] = useState(false);
   const sendContact = useCallback(
     async (evt) => {
       evt.preventDefault();
@@ -47,7 +47,7 @@ const Form = ({ onSuccess, onError }) => {
             titleEmpty
           />
           <Field placeholder="" label="Email" type={FIELD_TYPES.EMAIL}/>
-          <Button type={BUTTON_TYPES.SUBMIT} disabled={sending} data-testid="button-test-id">
+          <Button type={BUTTON_TYPES.SUBMIT} disabled={sending} data-testid="button button-test-id">
           {buttonText}
           </Button>
         </div>
