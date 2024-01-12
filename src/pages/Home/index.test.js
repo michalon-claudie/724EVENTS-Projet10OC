@@ -37,7 +37,15 @@ describe("When a page is created", () => {
     expect(title).toBeInTheDocument()})
   })
   it("a list a people is displayed", () => {
-    // to implement
+    render(
+      <section className="PeoplesContainer">
+        <h2 className="Title">Notre équipe</h2>
+        <p>Une équipe d’experts dédiés à l’organisation de vos événements</p>
+      </section>
+    );
+    expect(screen.getByText('Notre équipe')).toBeInTheDocument();
+    expect(screen.getByText('Une équipe d’experts dédiés à l’organisation de vos événements')).toBeInTheDocument();
+})
   })
   it("a footer is displayed", () => {
     // to implement
@@ -45,4 +53,4 @@ describe("When a page is created", () => {
   it("an event card, with the last event, is displayed", () => {
     // to implement
   })
-});
+
