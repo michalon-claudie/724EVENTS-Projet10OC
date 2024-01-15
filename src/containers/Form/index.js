@@ -47,7 +47,7 @@ const Form = ({ onSuccess, onError }) => {
             titleEmpty
           />
           <Field placeholder="" label="Email" type={FIELD_TYPES.EMAIL}/>
-          <Button type={BUTTON_TYPES.SUBMIT} disabled={sending} data-testid="button button-test-id">
+          <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}>
           {buttonText}
           </Button>
         </div>
