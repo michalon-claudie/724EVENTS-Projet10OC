@@ -47,10 +47,24 @@ describe("When a page is created", () => {
     expect(screen.getByText('Une équipe d’experts dédiés à l’organisation de vos événements')).toBeInTheDocument();
 })
   })
-  it("a footer is displayed", () => {
-    // to implement
+  describe("a footer is displayed", () => {
+    const socialMediaLinks = screen.getAllByRole('link');
+    socialMediaLinks.forEach((link) => {
+      expect(link).toBeInTheDocument();
+    });
+    it("an event card, with the last event, is displayed", () => {
+      if (last) {
+        const eventCardImage = screen.getByAltText(last.title);
+        const eventCardTitle = screen.getByText(last.title);
+        const eventCardDate = screen.getByText(new Date(last.date).toLocaleDateString(), { exact: false })
+        const eventCardLabel = screen.getByText('boom');
+
+        expect(eventCardImage).toBeInTheDocument();
+        expect(eventCardTitle).toBeInTheDocument();
+        expect(eventCardDate).toBeInTheDocument();
+        expect(eventCardLabel).toBeInTheDocument();
+      } 
+    })
   })
-  it("an event card, with the last event, is displayed", () => {
-    // to implement
-  })
+  
 
