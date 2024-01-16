@@ -48,8 +48,6 @@ describe("When a page is created", () => {
 })
   })
   describe("a footer is displayed",() => {
-    it("an event card, with the last event, is displayed", () => {
-    })
     it('renders "Contactez-nous" section', () => {
       render (<Home/>)
       expect(screen.getByText('Contactez-nous')).toBeInTheDocument();
