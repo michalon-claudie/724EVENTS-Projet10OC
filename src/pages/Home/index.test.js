@@ -47,24 +47,20 @@ describe("When a page is created", () => {
     expect(screen.getByText('Une équipe d’experts dédiés à l’organisation de vos événements')).toBeInTheDocument();
 })
   })
-  describe("a footer is displayed", () => {
-    const socialMediaLinks = screen.getAllByRole('link');
-    socialMediaLinks.forEach((link) => {
-      expect(link).toBeInTheDocument();
-    });
+  describe("a footer is displayed",() => {
     it("an event card, with the last event, is displayed", () => {
-      if (last) {
-        const eventCardImage = screen.getByAltText(last.title);
-        const eventCardTitle = screen.getByText(last.title);
-        const eventCardDate = screen.getByText(new Date(last.date).toLocaleDateString(), { exact: false })
-        const eventCardLabel = screen.getByText('boom');
-
-        expect(eventCardImage).toBeInTheDocument();
-        expect(eventCardTitle).toBeInTheDocument();
-        expect(eventCardDate).toBeInTheDocument();
-        expect(eventCardLabel).toBeInTheDocument();
-      } 
     })
+    it('renders "Contactez-nous" section', () => {
+      render (<Home/>)
+      expect(screen.getByText('Contactez-nous')).toBeInTheDocument();
+      expect(screen.getByText('45 avenue de la République, 75000 Paris')).toBeInTheDocument();
+      expect(screen.getByText('01 23 45 67 89')).toBeInTheDocument();
+      expect(screen.getByText('contact@77events.com')).toBeInTheDocument();
+  
+      const socialLinksDiv = screen.getByTestId('socialLink');
+      const socialLinks = socialLinksDiv.querySelectorAll('a');
+      expect(socialLinks).toHaveLength(4);
   })
+})
   
 

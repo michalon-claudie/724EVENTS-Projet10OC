@@ -129,7 +129,7 @@ const Page = () => {
         <address>45 avenue de la République, 75000 Paris</address>
         <div>01 23 45 67 89</div>
         <div>contact@77events.com</div>
-        <div>
+        <div data-testid="socialLink">
           <a href="#twitch">
             <Icon name="twitch" />
           </a>
