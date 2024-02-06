@@ -36,16 +36,11 @@ describe("When a page is created", () => {
     eventsTitles.forEach(title => {
     expect(title).toBeInTheDocument()})
   })
-  it("a list a people is displayed", () => {
-    render(
-      <section className="PeoplesContainer">
-        <h2 className="Title">Notre équipe</h2>
-        <p>Une équipe d’experts dédiés à l’organisation de vos événements</p>
-      </section>
-    );
-    expect(screen.getByText('Notre équipe')).toBeInTheDocument();
-    expect(screen.getByText('Une équipe d’experts dédiés à l’organisation de vos événements')).toBeInTheDocument();
-})
+    it("a list a people is displayed", () => {
+    render(<Home/>);
+    expect(screen.getAllByText('Notre équipe')[0]).toBeInTheDocument();
+    expect(screen.getByText(/Une équipe d’experts dédiés à l’ogranisation de vos événements/i)).toBeInTheDocument();
+  })
   })
   describe("a footer is displayed",() => {
     it('renders "Contactez-nous" section', () => {

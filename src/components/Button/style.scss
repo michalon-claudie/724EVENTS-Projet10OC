@@ -20,4 +20,7 @@
     );
     cursor: pointer;
   }
+  @media screen and (min-width: 500px) and (max-width: 838px) {
+    min-width:97px;
+  }
 }

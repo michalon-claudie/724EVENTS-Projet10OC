@@ -26,6 +26,12 @@ input {
   }
 
   font-family: "Manrope", sans-serif;
+  @media screen and (min-width: 810px) and (max-width: 968px) {
+    min-width: 300px; 
+  }
+  @media screen and (min-width: 500px) and (max-width: 810px) {
+    min-width: 230px;
+  }
 }
 textarea {
   height: 336px;
@@ -39,6 +45,14 @@ textarea {
   &:focus {
     color: $primary;
   }
-
+  @media screen and (min-width: 810px) and (max-width: 968px) {
+    min-width: 300px; 
+  }
+  @media screen and (min-width: 550px) and (max-width: 810px) {
+    min-width: 230px;
+  }
+  @media screen and (max-width:549px) {
+    min-width: 120px;
+  }
   font-family: "Manrope", sans-serif;
 }

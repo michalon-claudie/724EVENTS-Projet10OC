@@ -17,10 +17,17 @@ nav {
     width: 80%;
     justify-content: flex-end;
     margin: 0;
+    @media screen and (min-width: 500px) and (max-width: 887px) {
+      padding-right:0px;
+      padding-left: 0px;
+    }
     li {
       list-style: none;
       margin: 40px;
       padding: 0;
+      @media screen and (max-width: 670px) {
+        margin:10px;
+      }
       a {
         text-decoration: none;
         color: $black;
